@@ -1,0 +1,35 @@
+---
+import Logo from "../Logo.astro";
+import Logo2 from "../Logo2.astro";
+import LandingHeaderOptions from "@/components/Landing/LandingHeaderOptions.astro";
+import LandingHeaderNav from "@/components/Landing/LandingHeaderNav.astro";
+---
+
+<div	id="landingHeader"	class="px-5	py-2 flex items-center fixed top-0	w-screen	justify-between	z-50	h-20">
+	<div class="flex basis-0">
+		<a href="/"	class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110">
+			<Logo2 />
+		</a>
+	</div>
+	<div class="flex flex-grow opacity-100 justify-center">
+		<h2 class="text-3xl ">Documentación</h2>
+	</div>
+	<div class="flex basis-0 opacity-100">
+		<div class="flex items-center mr-2 border text-foreground rounded-2xl text-black shadow-md border-ring w-60 " >
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Buscar..."
+              class="bg-blur backdrop-blur-md w-full text-black rounded-2xl h-10 pl-4  "
+              style="padding-left: 20px"
+            />
+            <button
+              id="searchButton"
+              class="bg-blur backdrop-blur-md  rounded-r-2xl rounded-full cursor-pointer w-10 "
+            >
+              <!-- Cambiar el icono de búsqueda por una lupa -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+	</div>
+</div>

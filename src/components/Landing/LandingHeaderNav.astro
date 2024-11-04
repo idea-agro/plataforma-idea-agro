@@ -1,0 +1,118 @@
+---
+import texts from "@/../texts.json";
+import LandingNavOption from "@/components/Landing/LandingHeaderNavOption.astro";
+import LandingHeaderNavIndicatorsPanel from "@/components/Landing/LandingHeaderNavIndicatorsPanel.astro";
+import LandingHeaderNavZonesPanel from "@/components/Landing/LandingHeaderNavZonesPanel.astro";
+import LandingHeaderNavDocumentationPanel from "@/components/Landing/LandingHeaderNavDocumentationPanel.astro";
+---
+
+<nav class="hidden lg:flex flex-grow opacity-100 justify-center">
+  <ul id="navList" class="flex flex-grow text-lg font:medium justify-center">
+    <li class="m-6">
+      <LandingNavOption
+        id="indicatorsOption"
+        text={texts.landing.header.nav.indicators}
+      />
+    </li>
+    <li class="m-6">
+      <LandingNavOption
+        id="zonesOption"
+        text={texts.landing.header.nav.zonesOption}
+      />
+    </li>
+    <li class="m-6">
+      <LandingNavOption
+        id="documentationOption"
+        text={texts.landing.header.nav.documentationOption}
+      />
+    </li>
+  </ul>
+</nav>
+
+<div
+  id="navOptionsPanel"
+  data-state="closed"
+  class="hidden bg-white w-screen h-[40vh] absolute top-0 left-0 -z-10"
+>
+  <LandingHeaderNavIndicatorsPanel />
+  <LandingHeaderNavZonesPanel />
+  <LandingHeaderNavDocumentationPanel />
+</div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navOptionsPanel = document.querySelector(
+      "#navOptionsPanel"
+    ) as HTMLElement;
+    navOptionsPanel.addEventListener("mouseleave", collapsePanel);
+
+    const landingNavs = document.querySelectorAll(".landing-nav");
+    landingNavs.forEach(function (e) {
+      e.addEventListener("mouseenter", () => expandPanel(e));
+    });
+
+    const landingHeader = document.querySelector(
+      "#landingHeader"
+    ) as HTMLElement;
+
+    // Función para expandir el panel
+    function expandPanel(e) {
+      const landingNavs = document.querySelectorAll(".landing-nav");
+      landingNavs.forEach(function (e) {
+        (e as HTMLElement).style.removeProperty("border-bottom");
+      });
+
+      navOptionsPanel.setAttribute("data-state", "open");
+
+      const optionsPanel = document.querySelectorAll(".option-panel");
+      optionsPanel.forEach(function (e) {
+        (e as HTMLElement).setAttribute("data-state", "inactive");
+      });
+
+      const panelContent = document.querySelector(
+        `#${e.id}Panel`
+      ) as HTMLElement;
+      panelContent.setAttribute("data-state", "active");
+
+      landingHeader.style.color = "black";
+      e.style.borderBottom = "2px solid black";
+      console.log("expand end");
+    }
+
+    function collapsePanel() {
+      const optionsPanel = document.querySelectorAll(".option-panel");
+      optionsPanel.forEach(function (e) {
+        (e as HTMLElement).setAttribute("data-state", "inactive");
+      });
+      navOptionsPanel.setAttribute("data-state", "closed");
+      navOptionsPanel.classList.remove("hidden");
+
+      landingHeader.style.removeProperty("color");
+
+      const landingNavs = document.querySelectorAll(".landing-nav");
+
+      landingNavs.forEach(function (e) {
+        (e as HTMLElement).style.removeProperty("border-bottom");
+      });
+
+      // Hiding indicator descriptions
+      const descriptions = document.querySelectorAll(".description");
+      descriptions.forEach(function (e) {
+        (e as HTMLElement).style.display = "none";
+      });
+
+      const indicatorsDescription = document.getElementById(
+        "indicatorsDescriptions"
+      );
+      indicatorsDescription.style.display = "flex";
+
+      const zonesDescription = document.getElementById("zonesDescription");
+      zonesDescription.style.display = "flex";
+      console.log("Collapse end");
+    }
+  });
+  
+  
+</script>

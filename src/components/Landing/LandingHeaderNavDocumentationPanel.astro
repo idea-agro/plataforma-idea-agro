@@ -1,0 +1,61 @@
+---
+import { Separator } from "@/components/ui/separator";
+---
+
+<div id="documentationOptionPanel" data-state="inactive" class="option-panel hidden flex-grow pt-20 px-2 mx-4 justify-around ">
+	<a href="Documentation.html#section_article" class="option  flex items-center flex-col  cursor-pointer ">
+		<h3 class= "documentation-option ">Articulos</h3>
+		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		</p>
+	</a>
+	<Separator className="my-4 h-[70%] bg-black " orientation="vertical"/>
+	<a href="Documentation.html#section_systemUse" class="option flex items-center flex-col cursor-pointer">
+		<p class= "documentation-option ">Uso del sistema</p>
+		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		</p>
+	</a>
+	<Separator className="my-4 h-[70%] bg-black" orientation="vertical"/>
+	<a href="Documentation.html#section_api"class=" option flex items-center flex-col cursor-pointer">
+		<p class= "documentation-option ">API</p>
+		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		</p>
+	</a>
+	<Separator className="my-4 h-[70%] bg-black" orientation="vertical"/>
+	<a href="Documentation.html#section_GeeResources" class=" option flex items-center flex-col cursor-pointer">
+		<p class= "documentation-option hover:bg-gray-200">Recursos GEE</p>
+		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		</p>
+	</a>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+
+	  function borderbottom(e) {
+		const elementId = e.querySelectorAll(".documentation-option");
+		elementId.forEach(function (element) {
+		  element.style.borderBottom = "none";
+		});
+
+		e.querySelector(".documentation-option").style.borderBottom = "1px solid black";
+	  }
+
+	  const linksDocumentation = document.querySelectorAll("a.option");
+	  linksDocumentation.forEach(function (link) {
+		link.addEventListener("mouseenter", function (event) {
+		  borderbottom(event.currentTarget);
+		});
+		link.addEventListener("mouseleave", function (event) {
+		  const element = (event.currentTarget as HTMLElement).querySelector(".documentation-option");
+		  if (element) {
+				(element as  HTMLElement).style.borderBottom = "none";
+		  }
+		});
+	  });
+
+	});
+  </script>
