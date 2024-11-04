@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DocumentationHeader from "../components/Landing/DocumentationHeader.astro";
+import { Separator } from "@/components/ui/separator";
+import Documentation from "@/components/Documentation.tsx";
+import { Content as PlatformContent } from "@/content/docs/platform.md";
+import { Content as ArticlesContent } from "@/content/docs/articles.md";
+import { Content as ApiContent } from "@/content/docs/api.md";
+import { Content as GEEContent } from "@/content/docs/gee.md";
+import { Indicator } from "@radix-ui/react-checkbox";
+---
+
+<title>Documentación - Aplicación de Pastizales</title>
+
+<Layout title="Documentation">
+    <div class="z-0" id="hidden-header">
+        <DocumentationHeader />
+    </div>
+</Layout>
+<!-- <h1 class="flex justify-center text-5xl pt-[80px]  text-center text-white">Documentación</h1> -->
+<img
+    src="/images/faq.jpg"
+    alt="faq"
+    class="w-screen -z-40 absolute top-0 botton-0 inset-0 bg-black opacity-50 object-cover"
+    style="height: 10vw"
+/>
+
+<body
+    class="bg-background text-foreground w-screen pt-[80px] overflow-y-auto "
+>
+    <ul class="flex flex-col space-y-2 pt-[80px]" id="searchResults"></ul>
+    <Documentation client:load>
+        <PlatformContent
+            id="sectionPlatformContent"
+            class="searchable"
+            slot="platformContent"
+        />
+        <ArticlesContent
+            id="sectionArticlesContent"
+            class="searchable"
+            slot="articlesContent"
+        />
+        <ApiContent
+            id="sectionApiContent"
+            class="searchable"
+            slot="apiContent"
+        />
+        <GEEContent
+            id="sectionGEEContent"
+            class="searchable"
+            slot="geeContent"
+        />
+    </Documentation>
+    <div class="flex flex-col pt-[20px] px-[150px] items-center">
+        <!-- Script para manejar la interactividad del FAQ -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Obtener todas las preguntas del FAQ
+                var faqQuestions = document.querySelectorAll(".faq-question");
+
+                // Agregar evento clic a cada pregunta para mostrar u ocultar la respuesta
+                faqQuestions.forEach(function (question) {
+                    question.addEventListener("click", function () {
+                        var answer = this.nextElementSibling;
+                        answer.style.display =
+                            answer.style.display === "block" ? "none" : "block";
+                    });
+                });
+            });
+        </script>
+
+        <script src="search.js"></script>
+        <script>
+            window.onload = function () {
+                const elementoArticle = document.getElementById(
+                    "sectionPlatformContent",
+                );
+                if (elementoArticle) {
+                    elementoArticle.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+                const elementoSystemUse = document.getElementById(
+                    "sectionArticlesContent",
+                );
+                if (elementoSystemUse) {
+                    elementoSystemUse.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+                const elementoApi =
+                    document.getElementById("sectionApiContent");
+                if (elementoApi) {
+                    elementoApi.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+                const elementoGeeResources =
+                    document.getElementById("sectionGEEContent");
+                if (elementoGeeResources) {
+                    elementoGeeResources.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            };
+        </script>
+        <script>
+            const header = document.getElementById("hidden-header");
+            let lastScrollTop = 0;
+
+            window.addEventListener("scroll", function () {
+                let scrollTop =
+                    window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    header.classList.add("hide-header");
+                } else {
+                    header.classList.remove("hide-header");
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+        </script>
+    </div>
+</body>
