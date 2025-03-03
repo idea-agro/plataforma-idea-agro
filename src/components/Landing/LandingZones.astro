@@ -1,11 +1,12 @@
 ---
 import texts from "@/../texts.json";
 import { Separator } from "@/components/ui/separator";
+import CardIndicators from "./CardIndicators.astro";
 ---
 
 <section class="flex-col min-h-screen w-screen text-center relative overflow-hidden pb-10 ">
-   <Separator className="mx-auto w-[90%] md:w-[80%] lg:w-[70%] mt-3 mb-3" />
-   <h1 class="pt-10 mb-[60px] text-3xl md:text-3xl xl:text-5xl font-medium text-center fadeInUp fadeInUpSlow">{texts.landing.header.nav.zonesOption}</h1>
+   <div class="absolute inset-0 bg-gradient-to-l  from-[#1f3322] to-[#039728] opacity-80 -z-10"></div>
+   <h1 class="p-8 mb-[60px] text-xl md:text-3xl xl:text-4xl font-medium text-center fadeInUp fadeInUpSlow bg-gradient-to-r from-[#c1c011] to-white  text-primary ">Zonas de Interés</h1>
 
   <section class="bento2 sm:grid-cols-1 md:grid-cols-3  md:gap-[50px] xl:gap-[20px] gap-4 mt-[6rem] mx-5 sm:mx-10 lg:mx-20 z-30 relative md:pt-28 xl:pt-4">
       <div class=" relative mb-8 md:mb-6 xl:mb-0 rounded-xl cursor-pointer border-white backdrop-blur-sm transition-transform transform-gpu hover:scale-105 sm:h-[50px] md:h-[300px] xl:h-auto">
@@ -13,7 +14,7 @@ import { Separator } from "@/components/ui/separator";
          <p class="md:text-md sm:text-sm text-center py-[2vh] px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
          <img src="/images/1.jpeg" alt="faq" class="absolute inset-0 w-full bg-black opacity-45  h-full object-cover rounded-xl -z-20" />
       </div>
-      <div class=" relative mb-8 md:mb-6 xl:mb-0 rounded-xl cursor-pointer border-white backdrop-blur-sm transition-transform transform-gpu hover:scale-105 sm:h-[50px] md:h-[300px] xl:h-auto ">
+      <div class=" relative mb-8 md:mb-6 xl:mb-0 rounded-xl cursor-pointer border-white  transition-transform transform-gpu hover:scale-105 sm:h-[50px] md:h-[300px] xl:h-auto ">
          <p class="items-start inline-flex sm:text-md md:text-lg xl:text-xl text-center mt-6 " >Seccionales Policiales </p>
          <p class="md:text-md sm:text-sm text-center py-[2vh] px-4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
          <img src="/images/2.jpg" alt="faq" class="absolute inset-0 w-full bg-black opacity-45 h-full object-cover rounded-xl -z-20" />
@@ -28,11 +29,7 @@ import { Separator } from "@/components/ui/separator";
          <p class="md:text-md sm:text-sm text-center py-[2vh] px-4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
          <img src="/images/4.jpg" alt="faq" class="absolute inset-0 w-full bg-black opacity-45  h-full object-cover rounded-xl -z-20" />
       </div>
-      <div class=" relative mb-8 md:mb-6 xl:mb-0 rounded-xl cursor-pointer border-white backdrop-blur-sm transition-transform transform-gpu hover:scale-105 sm:h-[50px] md:h-[300px] xl:h-auto">
-         <p class="items-start inline-flex sm:text-md md:text-lg xl:text-xl text-center mt-6 ">Comunidades de Pastizales</p>
-         <p class="md:text-md sm:text-sm text-center py-[2vh] px-4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-         <img src="/images/5.jpg" alt="faq" class="absolute inset-0 w-full bg-black opacity-45  h-full object-cover rounded-xl -z-20" />
-      </div>
+      
 
       </section>
       

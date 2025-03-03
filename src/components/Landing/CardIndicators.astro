@@ -1,0 +1,40 @@
+---
+interface IndicatorsCardProps {
+  title: string;
+  description: string;
+  image: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+const { title, description, image, buttonText, buttonLink } = Astro.props as IndicatorsCardProps;
+---
+
+<div class="bg-white rounded-lg border-2 hover:shadow-xl overflow-hidden flex flex-col  transition-transform transform-gpu  ">
+  {image && (
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-48 object-cover"
+    />
+  )}
+  <div class="pt-3 pb-3 px-3 flex flex-col flex-grow">
+    <!-- Título del Indicador -->
+    <h2 class="text-md font-bold text-gray-900 mb-2">{title}</h2>
+  
+    <!-- Descripción sin flex-grow para evitar expandirse -->
+    <p class="text-[12px] text-left text-slate-500 line-clamp-3 leading-tight mb-3">
+      {description}
+    </p>
+  
+    <!-- Botón alineado al fondo con mt-auto -->
+    <div class="mt-auto flex justify-end ">
+      <a
+        href={buttonLink}
+        class="text-[12px] font-bold px-3 py-2 bg-gray-900 text-white rounded-full shadow-lg hover:bg-[#296d4b] transition duration-300 ease-in-out"
+      >
+        {buttonText}
+      </a>
+    </div>
+  </div>
+</div>
