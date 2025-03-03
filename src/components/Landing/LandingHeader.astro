@@ -7,18 +7,24 @@ import texts from "@/../texts.json";
 import { Separator } from "@/components/ui/separator";
 ---
 
-<div	id="landingHeader"	class="px-5	py-2 flex items-center fixed top-0	w-full	justify-between	z-50 	h-20">
-	<div class="flex basis-0">
-		<a href="/"	class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110">
-			<Logo2 />
-		</a>
-	</div>
-	<div class="flex flex-grow opacity-100 justify-center">
-		<LandingHeaderNav />
-	</div>
-	<div class="hidden lg:flex basis-0 opacity-100">
-		<LandingHeaderOptions />
-	</div>
+<div
+  id="landingHeader"
+  class="px-5 py-4 flex items-center fixed top-0 w-full justify-between z-50 "
+>
+  <div class="flex basis-0">
+    <a
+      href="/"
+      class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+    >
+      <Logo2 />
+    </a>
+  </div>
+  <div class="flex flex-grow opacity-100 justify-center">
+    <LandingHeaderNav />
+  </div>
+  <div class="hidden lg:flex basis-0 opacity-100">
+    <LandingHeaderOptions />
+  </div>
 	<div class="xl:hidden flex justify-between items-center p-4 ">
 		<!-- Botón del menú de hamburguesa -->
 		<button id="hamburgerButton" class="text-secundary focus:outline-none">

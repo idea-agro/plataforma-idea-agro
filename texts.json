@@ -17,29 +17,45 @@
 				"Indicators":{
 					"generalDescription": "Descripcion general de los indicadores ambientales que ofrece nuestra plataforma",
 					"aparIndicator": {
-						"title": "Radiación Absorvida (APAR)",
-						"description": "Cálculo cada 16 dias de la radiación absorvida. Información disponible desde el año 2003."
+						"title": "Índice de Ganancias de Carbono (RFAA)",
+						"description": "El Índice de Ganancias de Carbono se caracteriza a partir de la Radiación fotosintéticamente Activa Absorbida (RFAA) por la vegetación en un período de tiempo y una superficie determinadas. Se calcula a partir de la Radiación incidente y del Índice de Vegetación Normalizado, un estimador de la fracción de la radiación fotosintéticamente activa interceptada por los tejidos verdes. Conocer la marcha anual de la RFAA permite describir la dinámica de las entradas de carbono en el ecosistema a lo largo del tiempo y constituye una medida de la productividad primaria neta aérea, una variable integradora del funcionamiento ecosistémico"
 					},
 					"ppnaIndicator": {
-						"title": "Productividad Primaria (PPNA)",
-						"description": "Cálculo cada 16 dias de productividad primaria. Información disponible desde el año 2001."
+						"title": "Productividad Primaria Neta Aéreas del Campo Natural (PPNA)",
+						"description": "La Productividad Primaria Neta Aérea es la cantidad de biomasa que el campo natural produce en un período de tiempo y en una superficie determinadas. Es una variable integradora del funcionamiento ecosistémico, ya que determina la cantidad de energía disponible para los niveles tróficos superiores. Determina la fuente de alimento para los herbívoros silvestres, así como el forraje disponible para la actividad ganadera. A partir de sensores remotos se estima utilizando el Modelo de Monteith (Monteith, 1972). Las variables de entrada de este modelo son la Radiación incidente, multiplicada por la fracción de la radiación fotosintéticamente activa absorbida por la vegetación (determinada principalmente por el Índice de Vegetación Normalizado) y por la eficiencia en el uso de la radiación, que indica qué cantidad de materia es incorporada en la vegetación por cada unidad de energía absorbida."
 					},
 					"rhIndicator": {
 						"title": "Rendimiento Hidrológico (RH)",
-						"description": "Cálculo cada 16 días del rendimiento hidrológico. Información disponible desde el año 2001."
+						"description": "El agua disponible sustenta la vida silvestre, el funcionamiento de los arroyos, el riego agrícola, el suministro de agua potable y otros servicios ecosistémicos asociados a la dinámica hídrica. El RH indica cuánta agua queda disponible en un sistema luego de un evento de precipitación. Se estima a partir de los ingresos de agua por precipitación, las salidas por evapotranspiración y la capacidad de almacenamiento de agua en el suelo (medida vinculada con su profundidad y a su textura). Una parte del agua que ingresa en el ecosistema a partir de la lluvia es interceptada por la vegetación y luego evaporada por el sol. Otra parte cae al suelo, se infiltra, es absorbida por las raíces y posteriormente es evapotranspirada. Cuando las lluvias son abundantes, por ejemplo, en un “año Niño”, o hay excedentes que no fueron evapotranspirados por la vegetación, el agua se escurre o drena en profundidad, alimentando ríos y arroyos y recargando acuíferos."
 					},
 					"etIndicator": {
 						"title": "Evapotranspiración (ET)",
-						"description": "Cálculo cada 8 días de la evapotranspiración. Información disponible desde el año 2001."
+						"description": "La ET es el componente más importante del ciclo hidrológico terrestre y constituye un factor crítico del ciclo del carbono y del agua. Es la salida principal de agua de los ecosistemas y se calcula como la suma del agua transpirada por la vegetación más la evaporada del suelo. La ET varía según el tipo de vegetación, la disponibilidad de agua en el suelo, la cobertura y la textura del suelo, las condiciones climáticas y las estrategias de manejo, entre otros. Su cálculo a partir de datos derivados de teledetección se basa en la ecuación de Penman-Monteith (Monteith, 1965)."
 					},
 					"ioseIndicator": {
 						"title": "Índice de Oferta de Servicios Ecosistémicos (IOSE)",
-						"description": "Información sobre el indicador IOSE..."
+						"description": "El IOSE es un indicador del nivel de oferta de Servicios Ecosistémicos de soporte y regulación asociados a la dinámica del carbono y del agua. Estos servicios incluyen el secuestro de carbono, la biodiversidad y el rendimiento hidrológico. Un aumento en la biodiversidad, por ejemplo, genera un impacto positivo en los demás servicios. Por esa razón nos referimos a “paquetes de servicios ecosistémicos” cuyas variaciones se evalúan en conjunto. El IOSE se calcula a partir de dos atributos de la marcha anual del del Índice de Vegetación Normalizado: el promedio anual y el coeficiente de variación intraanual. Los valores más altos del índice ocurren en sitios donde la productividad anual es mayor y más estable a lo largo del año, que por lo tanto tienen más capacidad de almacenar carbono y de manera uniforme a lo largo del año."
 					},
 					"coverIndicator": {
 						"title": "Cobertura del suelo",
-						"description": "Información sobre el indicador de cobertura del suelo..."
+						"description": "Conocer la distribución de las coberturas del suelo permite describir la composición y la estructura del territorio rural y caracterizar los cambios a través del tiempo. Se describen las coberturas del suelo para todo el territorio uruguayo clasificándolas en pastizales, pasturas, forestaciones, cultivo de verano, cultivo de invierno, doble cultivo y bosques nativos con una resolución espacial de 30metros. Los mapas disponibles están basados en la iniciativa Map Biomas Pampa  , combinados con mapas generados siguiendo la metodología propuesta por Baeza y colaboradores (2019) para desagregar la categoría “cultivos” de Map Biomas en cultivos de verano, cultivos de invierno y doble cultivo"
+					},
+					"ConservacionIndicator": {
+						"title": "Conservación de suelos (CSUE)",
+						"description": "Estima la pérdida de suelo por erosión a partir de la Ecuación Universal de Pérdida de Suelo (RUSLE). Este modelo toma como factor de pérdida de suelo el impacto de las gotas de lluvia sobre la superficie terrestre y tiene en cuenta aspectos topográficos (como la pendiente), la textura del suelo (contenido de arcillas, limos y arenas), la cobertura del suelo y las prácticas de conservación que pueden influir sobre el poder de erosividad. Los valores RUSLE más altos indican más erosión o menos conservación del suelo. Para expresar a este indicador como conservación del suelo, se calcula el complemento de la pérdida de suelo. Un manejo adecuado puede ayudar a reducir el poder de erosión. Por ejemplo, tener cubierto el suelo todo el año con vegetación, mediante un cultivo de cobertura, en vez de realizar un barbecho químico y dejar el suelo desnudo durante todo el invierno, sin dudas atenúa el impacto de la lluvia y ayuda a conservar el suelo."
+					},
+					"HumanAppropriationIndicator": {
+						"title": "Apropiación Humana de la Productividad Primaria Neta (AHPPN)",
+						"description": "La Productividad Primaria Neta es la cantidad de materia que la vegetación produce en un período de tiempo y en una superficie determinadas. En ausencia de influencia humana, cuanto mayor sea esta productividad, mayor será la energía disponible para el ecosistema. En cambio, en ecosistemas intervenidos, para conocer la energía disponible es necesario descontar lo que se destruye y exporta como consecuencia de las actividades productivas, ya sea en forma de granos, carne o madera. La AHPPN estima qué proporción de la productividad del ecosistema original o de referencia, es apropiada por las actividades productivas que lo reemplazan o modifican."
+					},
+					
+					"DiversidadIndicator": {
+						"title": "Diversidad de Tipos Funcionales de Ecosistemas (DivTFE)",
+						"description": "Los Tipos Funcionales de Ecosistemas (TFEs) son porciones del territorio que comparten características similares en la dinámica de los intercambios de materia y energía entre la biota y la atmósfera y que responden de manera semejante a factores ambientales. Surgen de combinar tres atributos funcionales de la marcha anual del crecimiento de la vegetación: el promedio anual, el coeficiente de variación intra-anual y el momento del máximo. Al partir la variación de cada atributo en 4 niveles y combinarlos, es posible obtener 64 TFE. Por ejemplo, un cultivo de trigo tendrá su máximo en primavera, uno de soja o maíz tendrá un promedio anual más alto con su máximo en verano, mientras que un doble cultivo presentará su máximo en verano, pero tendrá un coeficiente de variación menor al de los anteriores. La diversidad de TFE es una medida de la diversidad productiva de una porción del territorio y se calcula a partir del Índice de Shannon, que considera la cantidad de TFE presentes y la proporción de cada uno de ellos. Una mayor diversidad de tipos funcionales genera una mayor cantidad de ambientes para distintas especies benéficas, corta el desplazamiento y difusión de plagas, permite un mejor uso de los recursos y aumenta la resiliencia ante eventos extremos, entre otros aspectos de interés"
 					}
+					
+
+
 				},
 				"Zones": {
 					"generalDescription": "Descripcion general de las zonas de interés que ofrece nuestra plataforma",
@@ -95,7 +111,7 @@
 	},
 	"footer": {
 		"titleWhoWhere": "Quienes somos",
-		"descriptionWhoWhere": "Lorem ipsum dolor sit amet consectetur adipiscing elit dictumst leo ut cum cubilia eleifend dictum, diam semper integer dui cras imperdiet torquent ridiculus sapien dignissim nulla nascetur. Sodales tincidunt commodo suspendisse ac rutrum bibendum est, dictumst per porta fringilla inceptos integer hendrerit molestie, non eros leo tristique arcu vivamus. Aliquam curae fermentum litora potenti semper tortor, luctus vitae lectus nunc quis hendrerit, platea habitant sapien turpis justo.Vivamus fames ullamcorper pharetra est urna semper id lobortis arcu malesuada vestibulum class netus, egestas pellentesque conubia massa aliquet libero et fusce commodo ad fermentum. Facilisis nulla eleifend nec turpis venenatis ultrices primis himenaeos tincidunt nisi congue, odio posuere lobortis dui accumsan fusce vivamus euismod orci. Pulvinar proin vehicula vestibulum convallis sociis cursus justo, aliquam volutpat venenatis ut nulla egestas, praesent accumsan congue torquent lacus litora.",
+		"descriptionWhoWhere": "Un consorcio de investigación y desarrollo integrado por investigadores y técnicos de INIA, del Grupo de Ecología de Pastizales (GEP) de las Facultades de Ciencias y Agronomía de la UdelaR, del Laboratorio de Análisis Regional y Teledetección (LART) del IFEVA (Universidad de Buenos Aires y CONICET), del Instituto del Plan Agropecuario (IPA) y del MGAP",
 
 		"titleCardOne": "UNIVERSIDAD DE BUENOS AIRES",
 		"descriptionCardOne": "La UBA tiene un lugar central en la creación de conocimientos, es una de las universidades más importantes del mundo.",
