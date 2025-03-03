@@ -4,18 +4,19 @@ import Layout from "@/layouts/Layout.astro";
 
 
 import { BasinsGradeSelector } from "@/components/BasinsGradeSelector";
+import Logo2 from "@/components/Logo2.astro";
 ---
 
 <Layout title="Pastizales ROU">
   <div class="flex flex-col h-screen ">
     <header
-      class="flex flex-row px-5 py-2 items-center w-full justify-between text-1sm bg-background"
+      class="flex flex-row px-3  items-center w-full justify-between text-md bg-background"
     >
       <a
         href="/"
         class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
       >
-        <Logo1 />
+        <Logo2 />
       </a>
 
       <slot name="header" />
