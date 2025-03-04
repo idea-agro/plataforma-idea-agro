@@ -1,0 +1,64 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+const GOOGLE_MAP_KEY = import.meta.env.PUBLIC_GOOGLE_MAP_API_KEY;
+const zones = [
+  {
+    title: "Zona 1",
+    description: "england"
+  },
+  {
+    title: "Zona 2",
+    description: "spain"
+  }
+   
+]
+---
+<PageLayout title="Basins.">
+   <div slot="header">Cuencas</div>
+   <div slot="options">
+      <div class="flex text-1sm [&>i]:inline-block font:medium [&>i]:px-4 [&>i]:py-2 ">
+         
+         
+         <i title="Cuencas" class="fa-solid fa-water rounded-full cursor-pointer transition-transform transform-gpu hover:scale-150"></i>
+         <select name="Basins" id="basinsSelect" mb={3}>
+            <option>Cuencas de grado 1</option>
+            <option>Cuencas de grado 2</option>
+            <option>Cuencas de grado 3</option>
+            <option>Cuencas de grado 4</option>
+            <option>Cuencas de grado 5</option>
+          </select>
+       </div>
+       </div>
+   </div>
+   <div slot="map" id="map" class="flex-grow">
+   </div>
+   <div slot="list" class="bg-grey- flex flex-col">
+      
+      <div class="flex flex-col ">
+         <ul >
+            {
+               zones.map((data) => <li  class=" flex flex-row text-black  py-2 justify-bettwen text-1sm ">{data.title} {data.description}
+                  <i class="fa-solid fa-house  rounded-full cursor-pointer transition-transform transform-gpu hover:scale-150"></i></li> )
+            }
+
+            
+         </ul>
+         
+
+      </div>
+      
+
+   </div>
+   
+   </div>
+</PageLayout>
+
+
+<script
+        async
+        defer
+        src=`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_KEY}&callback=initMap&libraries=&v=weekly&loading=async`
+
+></script>
+
+<script src="https://kit.fontawesome.com/87794a60ab.js" crossorigin="anonymous"></script>

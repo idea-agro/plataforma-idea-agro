@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+
+// Toolbar.astro
+// Receive the selected option as a prop
+const { selectedOption = "home" } = Astro.props;
+
+// List of toolbar options
+const options = [
+	{ option: "Z", tooltip: "Zonas seleccionadas", icon: "custom-zones" },
+	{ option: "S", tooltip: "Seccionales Policiales", icon: "police-sections" },
+	{ option: "B", tooltip: "Cuencas", icon: "basins" },
+	{ option: "P", tooltip: "Padrones", icon: "padrones" },
+	{ option: "C", tooltip: "Comunidades de pastizales", icon: "communities" },
+];
+---
+
+<nav class="toolbar flex justify-around items-center p-2">
+  {options.map((o) => (
+    <a
+      href={`/Main?zone=${o.option}`}
+       class:list={[
+        "group relative p-2 hover:bg-[var(--secondary)] hover:text-primary rounded-md transition-colors",
+        { "bg-[var(--primary)]": o.option === selectedOption },
+      ]}
+      title={o.tooltip}
+    >
+      <Icon name={o.icon} size={o.option === selectedOption ? 36: 18} />
+    </a>
+  ))}
+</nav>
+
+<style>
+  /* Ensure the container works well with tooltips */
+  .toolbar a {
+    position: relative;
+  }
+</style>

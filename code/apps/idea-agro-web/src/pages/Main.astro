@@ -1,0 +1,107 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import texts from "@/../texts.json";
+import { Icon } from "astro-icon/components";
+import DeleteDialog from "@/components/DeleteDialog";
+import { AddZoneModal } from "@/components/AddZoneModal";
+import { ZonesOptions } from "@/components/ZonesOptions";
+import ZoneRow from "@/components/Zones/ZoneRow";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Separator } from "@/components/ui/separator";
+import SearchList from "@/components/SearchList.astro";
+import CustomZones from "@/components/Zones/CustomZones.astro";
+import BasinZones from "@/components/Zones/BasinZones";
+import PoliceSectionZones from "@/components/Zones/PoliceSectionZones";
+import CommunityZones from "@/components/Zones/CommunityZones.astro";
+import PadronZones from "@/components/Zones/PadronZones";
+import ZonesTypeSelector from "@/components/Zones/ZonesTypeSelector.astro";
+const GOOGLE_MAP_KEY = import.meta.env.PUBLIC_GOOGLE_MAP_API_KEY;
+
+const params = Astro.url.searchParams;
+
+const indicator = params.get("indicator");
+const zoneType = params.get("zone") || "Z";
+
+const showMapDrawingTools = zoneType.toUpperCase() === "Z";
+
+const title = getZoneTitle(zoneType);
+
+console.log(`indicator = ${indicator}, zone = ${zoneType}`);
+
+let showAddZonaModal = false;
+
+const triggerAddZonaModal = () => {
+	showAddZonaModal = true;
+};
+
+function getZoneTitle(zoneType) {
+	switch (zoneType) {
+		case "Z":
+			return texts.common.CustomZones;
+		case "B":
+			return texts.common.Basins;
+		case "S":
+			return texts.common.Police;
+		case "P":
+			return texts.common.Padrons;
+		case "C":
+			return texts.common.Communities;
+
+		default:
+			return texts.common.CustomZones;
+	}
+}
+---
+
+<PageLayout title="Zones">
+  <div slot="header" class="items-center">
+		{title}
+	</div>
+  <div slot="options" class="flex  items-center  ">
+		<ZonesTypeSelector selectedOption={zoneType}/>
+  </div>
+  <div slot="map" id="map" class="flex-grow "></div>
+  <div slot="tools" class="flex flex-col md:flex-row md:items-center md:justify-between">
+		<div class="mb-3 md:mb-0">
+			<SearchList />
+		</div>
+		{zoneType.toUpperCase() === "Z"
+			? <div class="md:ml-4">
+					<div class="flex flex-col md:flex-row md:items-center">
+						<ZonesOptions client:load/>
+					</div>
+				</div>
+			: null
+		}
+	</div>
+  <div slot="list" class="flex flex-col mt-1 ">
+		<div class="hidden md:block w-[100%] mt-3 mb-3">
+			<Separator />
+		</div >
+			{zoneType.toUpperCase() === "Z" ? <CustomZones/> : null}
+			{zoneType.toUpperCase() === "B" ? <BasinZones  client:load/>: null}
+			{zoneType.toUpperCase() === "S" ? <PoliceSectionZones client:load/> : null}
+			{zoneType.toUpperCase() === "C" ? <CommunityZones /> : null }
+			{zoneType.toUpperCase() === "P" ? <PadronZones client:load/>: null }
+  </div>
+</PageLayout>
+
+
+<script type="module"
+        async
+        defer
+        src=`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_KEY}&callback=initMap&libraries=&v=weekly&loading=async`
+
+></script>
+
+<script define:vars={{ indicator, showMapDrawingTools }}>
+	function initMap() {
+		console.log(`initMap -- ${indicator} - ${showMapDrawingTools}`)
+	}
+
+	initMap()
+</script>
+
+
+
+

@@ -1,0 +1,30 @@
+---
+import texts from "@/../texts.json";
+const title = texts.landing.appSection.title;
+const description = texts.landing.appSection.description;
+---
+
+<section class="flex-col bg-black h-screen w-screen text-center relative overflow-hidden ">
+    <div class="z-30 relative h-full flex flex-col">
+        <header>
+            <h2 class="text-white pt-40 text-3xl md:text-3xl xl:text-5xl text-center fadeInUp fadeInUpSlow font-medium fadeInUp fadeInUpSlow">
+                {title}
+            </h2>
+            <p class="text-white text-md  lg:text-lg xl:text-md py-10 px-4 md:px-6 lg:px-10 xl:px-36 whitespace-pre-line fadeInUp fadeInUpSlower">
+                {description}
+            </p>
+        </header>
+
+        <footer class="flex flex-row flex-grow justify-center items-end pb-20 fadeInUp fadeInUpSlower">
+              <a href="Main" class=" text-white text-sm border-2 border-white rounded font-medium py-2 px-12 backdrop-blur-sm inline-block cursor-pointer transition-transform transform-gpu hover:scale-110">
+                {texts.landing.sectionFooterButton}
+              </a>
+        </footer>
+    </div>
+
+    <div  class="absolute top-0 botton-0 z-10 inset-0 bg-black opacity-50 object-cover h-full w-full">
+        <video class="object-center object-cover h-full w-full" autoplay loop muted src="/landing.webm"></video>
+    </div>
+
+</section>
+

@@ -1,0 +1,70 @@
+---
+import Logo from "./Logo.astro";
+---
+
+
+<header
+			class="px-5 py-2 flex items-center fixed top-0 w-full justify-between z-40 text-white back">
+		
+			<div class="flex flex-grow basis-0">
+				<!-- -->
+				<Logo />
+			</div>
+			<nav class="flex opacity-100">
+				<ul
+					class="flex text-1sm [&>li>a]:inline-block font:medium text-white [&>li>a]:px-4 [&>li>a]:py-2"
+				>
+					<li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/Zones">Zonas</a
+						>
+					</li>
+					<li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/PoliceSections"
+							>Seccionales Policiales</a
+						>
+					</li>
+					<li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/Basins">Cuencas</a
+						>
+					</li>
+					<li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/Standars">Padrones</a
+						>
+					</li>
+					<li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/Communities">Comunidades Pastizales</a
+						>
+					</li>
+			
+				</ul>
+			</nav>
+
+			<nav class="flex justify-end flex-grow basis-0">
+				<ul
+					class="flex text-1sm [&>li>a]:inline-block font:medium text-white [&>li>a]:px-4 [&>li>a]:py-2"
+				>
+					<li
+						class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+					>
+						<i class="fa-solid fa-user"></i>
+						<a href="/Login">Iniciar Sesion</a>
+					</li>
+					<!-- <li>
+						<a
+							class="rounded-full cursor-pointer transition-transform transform-gpu hover:scale-110"
+							href="/contact">Contact</a
+						>
+					</li> -->
+				</ul>
+			</nav>
+		</header>

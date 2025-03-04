@@ -4,5 +4,18 @@
     "titleBar.activeBackground": "#1C10D5",
     "titleBar.activeForeground": "#FCFCFF"
   },
-  "cSpell.language": "en,es-ES"
+  "cSpell.language": "en,es-ES",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "cSpell.words": [
+    "oklch"
+  ]
 }

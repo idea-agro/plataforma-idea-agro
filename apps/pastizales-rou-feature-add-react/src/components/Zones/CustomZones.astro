@@ -1,0 +1,24 @@
+---
+import ZoneList from "@/components/Zones/ZoneList";
+
+const zones = [
+	{
+		id: 1,
+		name: "Zona 1",
+		type: "POLYGON",
+	},
+	{
+		id: 2,
+		name: "Zona 2",
+		type: "POINT",
+	},
+	{
+		id: 3,
+		name: "Zona 3",
+		type: "POLYGON",
+	},
+];
+---
+
+<ZoneList zones={zones} client:load/>
+
