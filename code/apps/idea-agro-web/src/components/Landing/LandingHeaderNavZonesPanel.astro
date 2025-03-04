@@ -2,86 +2,98 @@
 import { Icon } from "astro-icon/components";
 import texts from "@/../texts.json";
 ---
-	<div id="zonesOptionPanel" data-state="inactive" class=" hidden option-panel flex-grow justify-around items-center pt-[4rem]">
-		<div class="grid grid-cols-2 grid-rows-2 gap-x-36">
-			<a href="/Main?zone=CUSTOM-ZONES" id="defineZone" class="zone flex p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem]  w-[15rem]  rounded-lg border-black text-black" >
-				<div  class="text-sm flex flex-row">
-					<i class="mr-6 ml-2">
-						<Icon name="custom-zones" class="w-6 h-6" />
-					</i>
-						{texts.landing.header.nav.Zones.defineZones.title}
-				</div>
-			</a>
+	<div id="zonesOptionPanel" data-state="inactive" class="option-panel hidden  flex-col w-full mt-28 mx-10">
+		<div class=" grid grid-cols-1 ">
+			<div class="flex justify-center gap-x-20 grid-flow-row ">
+			<!-- Títulos de secciones -->
+			    <a href="/Main?zone=CUSTOM " class="text-sm">
+					<div id="defineZone" class="indicator flex p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[14rem] rounded-lg  border-black text-black " >
+						<i class=" mr-6 ml-2">
+							<Icon name="custom-zones" size="24" />
+						</i>
+						{texts.landing.header.nav.Zones.defineZones.title}<p>
+					</div>
+				</a>
 
-			<a href="/Main?zone=BASINS" id="basins" class="zone flex  p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem]  w-[15rem]  rounded-lg border-black text-black" >
-				<div class="text-sm flex flex-row">
-					<i class="mr-6 ml-2">
-						<Icon name="basins" class="w-6 h-6" />
-					</i>
+				<a href="/Main?zone=BASINS" class="text-sm">
+					<div id="basins" class="indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+						<i class=" mr-6 ml-2">
+							<Icon name="basins" size="24" />
+						</i>
 						{texts.landing.header.nav.Zones.basinsZones.title}
-				</div>
-			</a>
+					</div>
+				</a>
 
-			<a href="/Main?zone=POLICE_SECTIONS" id="police" class="zone flex  p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem]  w-[15rem]  rounded-lg border-black text-black" >
-				<div  class="text-sm flex flex-row">
-					<i class="mr-6 ml-2">
-						<Icon name="police-sections" class="w-6 h-6" />
-					</i>
+				<a href="/Main?zone=POLICE_SECTIONS" class="text-sm">
+					<div id="police" class="indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+						<i class=" mr-6 ml-2">
+							<Icon name="police-sections" size="24" />
+						</i>
 						{texts.landing.header.nav.Zones.policeSectionsZones.title}
-				</div>
-			</a>
+					</div>
+			    </a>
 
-			<a href="/Main?zone=PADRONES" id="standars" class="zone flex  p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem]  w-[15rem]  rounded-lg border-black text-black" >
-				<div  class="text-sm flex flex-row">
-					<i class="mr-6 ml-2">
-						<Icon name="padrones" class="w-6 h-6" />
-					</i>{texts.landing.header.nav.Zones.padronsZones.title}
-				</div>
-			</a>
+				<a href="/Main?zone=PADRONS" class="text-sm">
+					<div id="standars" class="indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+						<i class=" mr-6 ml-2">
+							<Icon name="padrones" size="24" />
+						</i>
+						{texts.landing.header.nav.Zones.padronsZones.title}
+					</div>
+			    </a>
 
-
+			</div>
 		</div>
 
-		<div id="zonesDescription" class="description  text-black   flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Zones.generalDescription}
-		</div>
-		<div id="defineZoneDescription" class="description  text-black  hidden flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Zones.defineZones.description}
-		</div>
+    <div class="mt-6 w-full border-t pt-3 pb-3">
+			<div id="zonesDescription" class="description  text-black flex flex-col text-sm whitespace-pre-line pb-4 w-full">
+				{texts.landing.header.nav.Zones.generalDescription}
+			</div>
+			<div id="defineZoneDescription" class="description hidden text-black  flex-col text-sm whitespace-pre-line pb-4 w-full">
+				{texts.landing.header.nav.Zones.defineZones.description}
+			</div>
 
-		<div id="basinsDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Zones.basinsZones.description}
-		</div>
+			<div id="basinsDescription" class="description hidden text-black flex-col text-sm whitespace-pre-line pb-4 w-full">
+				{texts.landing.header.nav.Zones.basinsZones.description}
+			</div>
 
-		<div id="policeDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Zones.policeSectionsZones.description}
-		</div>
+			<div id="policeDescription" class="description hidden text-black flex-col text-sm whitespace-pre-line pb-4 w-full">
+				{texts.landing.header.nav.Zones.policeSectionsZones.description}
+			</div>
 
-		<div id="standarsDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Zones.padronsZones.description}
-		</div>
+			<div id="standarsDescription" class="description hidden text-black flex-col text-sm whitespace-pre-line pb-4 w-full">
+				{texts.landing.header.nav.Zones.padronsZones.description}
+			</div>
+	</div>
 
 
-  </div>
+
+
 
 <script>
-	 document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", function () {
 
-		const zones = document.querySelectorAll(".zone");
-		zones.forEach(function (e) {
-		e.addEventListener("mouseenter", () => showDescription(e));
+		const indicators = document.querySelectorAll(".indicator");
+		indicators.forEach(function (e) {
+			e.addEventListener("mouseenter", () => showDescription(e));
 		});
 
-		function showDescription(e) {
 
+		function showDescription(e) {
+			console.log("SHowDescription")
 			const descriptions = document.querySelectorAll(".description");
 			descriptions.forEach(function (e) {
-			(e as HTMLElement).style.display = "none";
+				(e as HTMLElement).style.display = "none";
 			});
 
 			const description = document.getElementById(`${e.id}Description`)
 			description.style.display = "flex";
 		}
 
-});
+
+
+	});
+
 </script>
+
+

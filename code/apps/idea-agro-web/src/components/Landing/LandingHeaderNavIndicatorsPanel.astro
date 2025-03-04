@@ -6,118 +6,196 @@ import { Separator } from "@/components/ui/separator";
 ---
 
 
-  <div id="indicatorsOptionPanel" data-state="inactive" class="option-panel hidden flex-grow justify-around items-center pt-[4rem]">
-	<div class=" grid grid-cols-2 ">
+  <div id="indicatorsOptionPanel" data-state="inactive" class="option-panel hidden  flex-col w-full mt-28 mx-10">
+	<div class=" grid grid-cols-1 ">
 
-	<Separator className="absolute top-[38%] left-[72%] h-[50%] bg-gray-500" orientation="vertical" />
+	 <!-- Títulos de secciones -->
+	 <div class="grid grid-cols-2 mb-4">
+		<h2 class=" font-bold text-sm mb-2 ml-4 ">Características estructurales y funcionales</h2>
+		<h2 class=" font-bold text-sm mb-2 -ml-36 ">Indicadores Ambientales</h2>
+    </div>
 
 
-	</div>
+
+
       <div class="grid grid-cols-5 gap-4 grid-flow-row">
-		<div><h2 class=" font-bold text-sm ">Indicadores Productivos</h2>
-			<div id="apar" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[12rem] rounded-lg  border-black text-black" >
+
+		<a href="/Main?indicator=RFAA " class="text-[12px]">
+			<div id="apar" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
 				<i class=" mr-6 ml-2">
-					<Icon name="apar" size={24} />
+					<Icon name="apar" size="24" />
 				</i>
-				<a href="/Main?indicator=apar" class="text-[12px]"> {texts.landing.header.nav.Indicators.aparIndicator.title}<p>
+				{texts.landing.header.nav.Indicators.aparIndicator.title}
 			</div>
-		</div>
+	    </a>
 
-
-
-		<div><h2 class=" font-bold text-sm ">Indicadores Ambientales</h2>
-			<div id="rh" class=" indicator flex p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem]  w-[12rem]  rounded-lg border-black text-black" >
-				<i class="mr-6 ml-2">
-					<Icon name="rh" size={24} />
+		<a href="/Main?indicator=COB" class="text-[12px]">
+			<div id="cover" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+				<i class=" mr-6 ml-2">
+					<Icon name="cover" size="24" />
 				</i>
-				<a href="/Main?indicator=rh" class="text-[12px]">{texts.landing.header.nav.Indicators.rhIndicator.title}</a>
-			</div>
-		</div>
-    <div id="et" class=" indicator flex p-2 items-center mt-6 hover:bg-gray-200  h-[4rem] cursor-pointer w-[12rem] rounded-lg border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="et" size={24} />
-			</i>
-			<a href="/Main?indicator=et" class="text-[12px]">{texts.landing.header.nav.Indicators.etIndicator.title}</a>
-		</div>
-        <div id="iose" class=" indicator flex p-2 items-center mt-6 hover:bg-gray-200 h-[4rem] w-[12rem] cursor-pointer  rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="iose" size={24} />
-			</i>
-			<a href="/Main?indicator=iose" class="text-[12px]">IOSE</a>
-		</div>
-
-    <div id="cover" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] mt-6 w-[12rem] cursor-pointer  rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="cover" size={24} />
-			</i>
-			<a href="/Main?indicator=cover" class="text-[12px]">{texts.landing.header.nav.Indicators.coverIndicator.title}</a>
-		</div>
-		<div id="ppna" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] cursor-pointer w-[12rem] rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="ppna" size={24} />
-			</i>
-			<a href="/Main?indicator=ppna" class="text-[12px]">{texts.landing.header.nav.Indicators.ppnaIndicator.title}</a>
-		</div>
-		<div id="diversity" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[12rem] cursor-pointer  rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="diversity" size={24} />
-			</i>
-			<a href="/Main?indicator=diversity" class="text-[12px]">Diversidad</a>
-		</div>
-		<div id="conservation" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[12rem] cursor-pointer  rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="conservation" size={24} />
-			</i>
-			<a href="/Main?indicator=conservation" class="text-[12px]">Conservación</a>
-		</div>
-		<div id="human-appropriation" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[12rem] cursor-pointer  rounded-lg  border-black text-black" >
-			<i class=" mr-6 ml-2">
-				<Icon name="human-appropriation" size={24} />
-			</i>
-			<a href="/Main?indicator=humanAppropriation" class="text-[12px]">Apropiación Humana</a>
-		</div>
-		<a href="/Main?zone=COMMUNITIES" id="communities" class="indicator zone flex  p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem] w-[12rem]  rounded-lg border-black text-black" >
-			<div class="text-[12px] flex flex-row">
-				<i class="mr-6 ml-2">
-					<Icon name="communities" size={24} />
-				</i>
-					{texts.landing.header.nav.Zones.communitiesZones.title}
+				{texts.landing.header.nav.Indicators.coverIndicator.title}
 			</div>
 		</a>
 
-		</div>
-		<!-- <div class=" text-black flex flex-col text-sm whitespace-pre-line border-gray-500  border-l pl-8 pb-4 w-1/4">
-				Informacion general de los indicadores
-		</div> -->
-		<div id="indicatorsDescriptions" class="description text-black  flex flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Indicators.generalDescription}
-		</div>
-		<div id="aparDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Indicators.aparIndicator.description}
-		</div>
-		<div id="ppnaDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
-			{texts.landing.header.nav.Indicators.ppnaIndicator.description}
-		</div>
-		<div id="rhDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
 
-			{texts.landing.header.nav.Indicators.rhIndicator.description}
-		</div>
-		<div id="etDescription" class="description text-black  hidden flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
+		<a href="/Main?indicator=RH" class="text-[12px]">
+			<div id="rh" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+				<i class="mr-6 ml-2">
+					<Icon name="rh" size="24" />
+				</i>
+				{texts.landing.header.nav.Indicators.rhIndicator.title}
+			</div>
+	    </a>
+		<Separator className=" absolute h-[37%] ml-[76vh]" orientation="vertical"  />
 
-			{texts.landing.header.nav.Indicators.etIndicator.description}
-		</div>
-		<div id="ioseDescription" class="description text-black hidden  flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
+        <a href="/Main?indicator=ET" class="text-[12px]">
+			<div id="et" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+				<i class=" mr-6 ml-2">
+					<Icon name="et" size="24" />
+				</i>
+				{texts.landing.header.nav.Indicators.etIndicator.title}</a>
+			</div>
+	    </a>
 
-			{texts.landing.header.nav.Indicators.ioseIndicator.description}
-		</div>
-		<div id="coverDescription" class="description text-black hidden flex-col text-sm whitespace-pre-line  pl-8 pb-4 w-1/4">
+		<a href="/Main?indicator=IOSE" class="text-[12px]">
+			<div id="iose" class=" indicator flex  p-2 items-center hover:bg-gray-200  h-[4rem] cursor-pointer w-[13rem] rounded-lg  border-black text-black" >
+				<i class=" mr-6 ml-2">
+					<Icon name="iose" size="24" />
+				</i>
+				{texts.landing.header.nav.Indicators.ioseIndicator.title}</a>
+			</div>
+	    </a>
 
-			{texts.landing.header.nav.Indicators.coverIndicator.description}
-		</div>
-		<div id="communitiesDescription" class="description text-black hidden flex-col text-sm whitespace-pre-line pl-8 pb-4 w-1/4">
+        <a href="/Main?indicator=PPNA" class="text-[12px]">
+			<div id="ppna" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] cursor-pointer w-[15rem] rounded-lg  border-black text-black" >
+				<i class=" mr-6 ml-2">
+					<Icon name="ppna" size="24" />
+				</i>
+				{texts.landing.header.nav.Indicators.ppnaIndicator.title}</a>
+			</div>
+		</a>
 
-			{texts.landing.header.nav.Indicators.coverIndicator.description}
+		<div id="communities" class="indicator zone flex  p-2 items-center hover:bg-gray-200 cursor-pointer  h-[4rem] w-[12rem]  rounded-lg border-black text-black">
+			<i class="mr-6 ml-2">
+				<Icon name="communities" size="24" />
+			</i>
+				<a href="/Main?zone=ComPN" class="text-[12px]">{texts.landing.header.nav.Indicators.communitiesZonesIndicator.title}</a>
 		</div>
+		<div id="DivTFE" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[15rem] cursor-pointer  rounded-lg  border-black text-black" >
+			<i class=" mr-6 ml-2">
+				<Icon name="diversity" size="24" />
+			</i>
+			<a href="/Main?indicator=DivTFE" class="text-[12px]">{texts.landing.header.nav.Indicators.DiversidadIndicator.title}</a>
+		</div>
+		<div id="CSUE" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[15rem] cursor-pointer  rounded-lg  border-black text-black" >
+			<i class=" mr-6 ml-2">
+				<Icon name="conservation" size="24" />
+			</i>
+			<a href="/Main?indicator=CSUE" class="text-[12px]">{texts.landing.header.nav.Indicators.ConservacionIndicator.title}</a>
+		</div>
+		<div id="humanAppropriation" class=" indicator flex p-2 items-center  hover:bg-gray-200 h-[4rem] w-[15rem] cursor-pointer  rounded-lg  border-black text-black" >
+			<i class=" mr-6 ml-2">
+				<Icon name="human-appropriation" size="24" />
+			</i>
+			<a href="/Main?indicator=AHPPN" class="text-[12px]">{texts.landing.header.nav.Indicators.HumanAppropriationIndicator.title}</a>
+		</div>
+
+
+
+
+
+  </div>
+  {/* Sección de descripciones a todo lo ancho */}
+  <div class="mt-6 w-full border-t pt-3 pb-3">
+	{/* Descripción general */}
+	<div
+	  id="indicatorsDescriptions"
+	  class="description text-black flex flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.generalDescription}
+	</div>
+
+	{/* APAR */}
+	<div
+	  id="aparDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.aparIndicator.description}
+	</div>
+
+	{/* PPNA */}
+	<div
+	  id="ppnaDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.ppnaIndicator.description}
+	</div>
+
+	{/* RH */}
+	<div
+	  id="rhDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.rhIndicator.description}
+	</div>
+
+	{/* ET */}
+	<div
+	  id="etDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.etIndicator.description}
+	</div>
+
+	{/* IOSE */}
+	<div
+	  id="ioseDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.ioseIndicator.description}
+	</div>
+
+	{/* COVER */}
+	<div
+	  id="coverDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.coverIndicator.description}
+	</div>
+
+	{/* CONSERVATION */}
+	<div
+	  id="CSUEDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.ConservacionIndicator.description}
+
+	</div>
+
+	{/* APROPIACIÓN HUMANA */}
+	<div
+	  id="humanAppropriationDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.HumanAppropriationIndicator.description}
+
+	</div>
+
+	{/* COMMUNITIES */}
+	<div
+	  id="communitiesDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.communitiesZonesIndicator.description}
+	</div>
+	{/* Diversidad */}
+	<div
+	  id="DivTFEDescription"
+	  class="description text-black hidden flex-col text-[12px] whitespace-pre-line pb-4 w-full"
+	>
+	  {texts.landing.header.nav.Indicators.DiversidadIndicator.description}
+	</div>
 
   </div>
 

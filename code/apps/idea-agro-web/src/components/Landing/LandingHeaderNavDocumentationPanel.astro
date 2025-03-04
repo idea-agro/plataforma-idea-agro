@@ -1,61 +1,105 @@
 ---
-import { Separator } from "@/components/ui/separator";
+import texts from "@/../texts.json";
+import { Icon } from "astro-icon/components";
 ---
 
-<div id="documentationOptionPanel" data-state="inactive" class="option-panel hidden flex-grow pt-20 px-2 mx-4 justify-around ">
-	<a href="Documentation.html#section_article" class="option  flex items-center flex-col  cursor-pointer ">
-		<h3 class= "documentation-option ">Articulos</h3>
-		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		</p>
-	</a>
-	<Separator className="my-4 h-[70%] bg-black " orientation="vertical"/>
-	<a href="Documentation.html#section_systemUse" class="option flex items-center flex-col cursor-pointer">
-		<p class= "documentation-option ">Uso del sistema</p>
-		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		</p>
-	</a>
-	<Separator className="my-4 h-[70%] bg-black" orientation="vertical"/>
-	<a href="Documentation.html#section_api"class=" option flex items-center flex-col cursor-pointer">
-		<p class= "documentation-option ">API</p>
-		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		</p>
-	</a>
-	<Separator className="my-4 h-[70%] bg-black" orientation="vertical"/>
-	<a href="Documentation.html#section_GeeResources" class=" option flex items-center flex-col cursor-pointer">
-		<p class= "documentation-option hover:bg-gray-200">Recursos GEE</p>
-		<p class="text-sm pt-2 w-60 max-h-32 overflow-y-auto">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		</p>
-	</a>
+<div id="documentationOptionPanel" data-state="inactive" class="option-panel hidden flex-col w-full mt-28 mx-10">
+  <!-- Contenedor de opciones en grid (1 columna) con un flex interno centrado -->
+  <div class="grid grid-cols-1">
+    <div class="flex justify-center gap-x-20 grid-flow-row">
+      <!-- Artículos -->
+			<a href="Documentation.html#section_article" class="text-sm">
+				<div id="articles" class="documentation flex p-2 items-center hover:bg-gray-200 h-[4rem] cursor-pointer w-[14rem] rounded-lg border-black text-black">
+					<i class="mr-6 ml-2">
+						<Icon name="articles" size="24" />
+					</i>
+
+					{texts.landing.header.nav.Documentation.Articles.title}
+
+				</div>
+			</a>
+
+      <!-- Uso del Sistema -->
+			<a href="Documentation.html#section_systemUse" class="text-sm">
+				<div id="systemUse" class="documentation flex p-2 items-center hover:bg-gray-200 h-[4rem] cursor-pointer w-[14rem] rounded-lg border-black text-black">
+					<i class="mr-6 ml-2">
+						<Icon name="systemUse" size="24" />
+					</i>
+
+					{texts.landing.header.nav.Documentation.SystemUse.title}
+
+				</div>
+			</a>
+
+      <!-- API -->
+	  	<a href="Documentation.html#section_api" class="text-sm">
+        <div id="api" class="documentation flex p-2 items-center hover:bg-gray-200 h-[4rem] cursor-pointer w-[14rem] rounded-lg border-black text-black">
+          <i class="mr-6 ml-2">
+            <Icon name="api" size="24" />
+          </i>
+
+          {texts.landing.header.nav.Documentation.API.title}
+
+        </div>
+	  	</a>
+
+      <!-- Recursos Gee -->
+			<a href="Documentation.html#section_GeeResources" class="text-sm">
+				<div id="resourcesGee" class="documentation flex p-2 items-center hover:bg-gray-200 h-[4rem] cursor-pointer w-[14rem] rounded-lg border-black text-black">
+					<i class="mr-6 ml-2">
+						<Icon name="resourcesGEE" size="24" />
+					</i>
+
+					{texts.landing.header.nav.Documentation.ResourcesGee.title}
+
+				</div>
+			</a>
+    </div>
+  </div>
+
+  <!-- Sección de descripciones con separador horizontal -->
+  <div class="mt-6 w-full border-t pt-3 pb-3">
+    <!-- Descripción general (por defecto visible) -->
+    <div id="documentationDescription" class="description flex text-black flex-col text-sm whitespace-pre-line pb-4 w-full">
+      {texts.landing.header.nav.Documentation.generalDescription}
+    </div>
+    <!-- Descripciones específicas (ocultas hasta hacer hover) -->
+    <div id="articlesDescription" class="description hidden text-black  flex-col text-sm whitespace-pre-line pb-4 w-full">
+      {texts.landing.header.nav.Documentation.Articles.description}
+    </div>
+    <div id="systemUseDescription" class="description hidden text-black  flex-col text-sm whitespace-pre-line pb-4 w-full">
+      {texts.landing.header.nav.Documentation.SystemUse.description}
+    </div>
+    <div id="apiDescription" class="description hidden text-black  flex-col text-sm whitespace-pre-line pb-4 w-full">
+      {texts.landing.header.nav.Documentation.API.description}
+    </div>
+    <div id="resourcesGeeDescription" class="description hidden text-black  flex-col text-sm whitespace-pre-line pb-4 w-full">
+      {texts.landing.header.nav.Documentation.ResourcesGee.description}
+    </div>
+  </div>
 </div>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
 
-	  function borderbottom(e) {
-		const elementId = e.querySelectorAll(".documentation-option");
-		elementId.forEach(function (element) {
-		  element.style.borderBottom = "none";
+		const documentations = document.querySelectorAll(".documentation");
+		documentations.forEach(function (e) {
+			e.addEventListener("mouseenter", () => showDescription(e));
 		});
 
-		e.querySelector(".documentation-option").style.borderBottom = "1px solid black";
-	  }
 
-	  const linksDocumentation = document.querySelectorAll("a.option");
-	  linksDocumentation.forEach(function (link) {
-		link.addEventListener("mouseenter", function (event) {
-		  borderbottom(event.currentTarget);
-		});
-		link.addEventListener("mouseleave", function (event) {
-		  const element = (event.currentTarget as HTMLElement).querySelector(".documentation-option");
-		  if (element) {
-				(element as  HTMLElement).style.borderBottom = "none";
-		  }
-		});
-	  });
+		function showDescription(e) {
 
-	});
-  </script>
+			const descriptions = document.querySelectorAll(".description");
+			descriptions.forEach(function (e) {
+				(e as HTMLElement).style.display = "none";
+			});
+
+			const description = document.getElementById(`${e.id}Description`)
+			description.style.display = "flex";
+		}
+  });
+
+</script>
+
+

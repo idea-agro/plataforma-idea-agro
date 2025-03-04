@@ -32,7 +32,7 @@ import LandingHeaderNavDocumentationPanel from "@/components/Landing/LandingHead
 <div
   id="navOptionsPanel"
   data-state="closed"
-  class="hidden bg-white w-screen h-[40vh] absolute top-0 left-0 -z-10"
+  class="hidden bg-white w-screen h-auto absolute top-0 left-0 -z-10"
 >
   <LandingHeaderNavIndicatorsPanel />
   <LandingHeaderNavZonesPanel />
@@ -110,9 +110,11 @@ import LandingHeaderNavDocumentationPanel from "@/components/Landing/LandingHead
 
       const zonesDescription = document.getElementById("zonesDescription");
       zonesDescription.style.display = "flex";
-      console.log("Collapse end");
+
+      const documentationDescription = document.getElementById("documentationDescription");
+      documentationDescription.style.display = "flex";
     }
   });
-  
-  
+
+
 </script>
